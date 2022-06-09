@@ -1,0 +1,5 @@
+experiment: mnist
+batch_size: 128  # clusterability paper uses batch_size of 128
+epochs: 20  # using 20 without pruning
+alpha: 0.0 # do not penalise polysemantic neurons
+lr: 0.001 # clusterability paper uses lr of 0.001
