@@ -1,5 +1,5 @@
-experiment: mnist_with_pruning
+experiment: fashion_mnist
 batch_size: 128  # clusterability paper uses batch_size of 128
 epochs: 20  # using 20 before pruning
-alpha: -1.0 # encourage polysemantic neurons
+alpha: 1.0 # penalise polysemantic neurons
 lr: 0.001 # clusterability paper uses lr of 0.001
