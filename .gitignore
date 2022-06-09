@@ -1,3 +1,8 @@
+*.h5
+*.pb
+*.pbtxt
+*.pckl
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
