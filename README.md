@@ -26,9 +26,9 @@ The polysemantic loss was added to the cross entropy loss.  Control models were 
 4) Penalising PNs lead to absolutely more clusterable networks than controls.  Encouraging PNs lead to absolutely less clusterable networks than controls, although the difference was less pronounced.
 
 ### Takeaways
-These results  indicate that it is possible to identify PNs and too successfully penalise a network for learning them with little loss in classification performance.  Similar results hold for the same experimental set up with Fashion-MNIST.
+These results  indicate that it is possible to identify PNs and too successfully penalise a network for learning them with little loss in classification performance.  Similar results hold for the same experimental set up with [Fashion-MNIST](https://github.com/dr-darryl-wright/polysemantic-neurons/tree/main/experiments/fashion_mnist).
 
-For a network to be absolutely more clusterable it must be more modular, meaning it can be partitioned into subgraphs with strong internal connectivity but only weakly connected to other neurons. This shares the definition of circuits, “a computational subgraph of a neural network. It consists of a set of features, and the weighted edges that go between them in the original network.” The circuits agenda aims to improve interpretability of neural networks by identifying subgraphs that are more tractable to rigorously investigate than the whole network. If circuits are coherent with respect to class labels, then network behaviour could be interpreted in terms of individual circuit behaviour. Effectively allowing the interpretability of networks to be decomposed into subproblems. PNs are a problem as they are not coherent with respect to class labels and therefore, neither are circuits that contain them.
+For a network to be absolutely more clusterable it must be more modular, meaning it can be partitioned into subgraphs with strong internal connectivity but only weakly connected to other neurons[^1]. This shares the definition of circuits, “a computational subgraph of a neural network. It consists of a set of features, and the weighted edges that go between them in the original network.”[^2] The circuits agenda aims to improve interpretability of neural networks by identifying subgraphs that are more tractable to rigorously investigate than the whole network. If circuits are coherent with respect to class labels, then network behaviour could be interpreted in terms of individual circuit behaviour. Effectively allowing the interpretability of networks to be decomposed into subproblems. PNs are a problem as they are not coherent with respect to class labels and therefore, neither are circuits that contain them.
 
 ### Future directions
 *Improving the polysemantic loss function*
@@ -37,7 +37,7 @@ For the polysemantic loss in the experiments, the activation vectors are rescale
 
 *Are the clusters coherent with class labels?*
 
-The clustering results in 4) are promising. The hypothesis was that penalising PNs should lead to networks that are absolutely more clusterable than controls and networks where PNs are encourages. This is what was seen for both MNIST and Fashion-MNIST.  MNIST networks were also relatively more clusterable.  However, networks trained on Fashion-MNIST were not, suggesting that the increased absolute clusterability may simply be due to the distribution of weights in each layer.  It remains to be seen if the circuits identified by clustering are coherent with respect to class labels or with respect to input features as has been observed for the MNIST controls. 
+The clustering results in 4) are promising. The hypothesis was that penalising PNs should lead to networks that are absolutely more clusterable than controls and networks where PNs are encourages. This is what was seen for both MNIST and Fashion-MNIST.  MNIST networks were also relatively more clusterable.  However, networks trained on Fashion-MNIST were not, suggesting that the increased absolute clusterability may simply be due to the distribution of weights in each layer.  It remains to be seen if the circuits identified by clustering are coherent with respect to class labels or with respect to input features as has been observed for the MNIST controls[^3]. 
 
 *Encouraging PNs*
 
@@ -49,5 +49,9 @@ These aspects of encouraging PNs have not yet been explored.
 
 *Scaling up*
 
-I think these initial results are promising enough to motivate effort to scale up the experiments. The first step would be to replicate the local specialization study of Casper et al. (2022) with CNNs penalised for learning PNs.  The hope would be that training in this way will yield greater class-specific measures of coherence than has been observed so far. This would then justify a deeper dive into an analysis of the circuits identified in these networks.
+I think these initial results are promising enough to motivate effort to scale up the experiments. The first step would be to replicate the local specialization study of [Casper et al. (2022)](https://openreview.net/pdf?id=HreeeJvkue9) with CNNs penalised for learning PNs.  The hope would be that training in this way will yield greater class-specific measures of coherence than has been observed so far. This would then justify a deeper dive into an analysis of the circuits identified in these networks.
 At this stage we would have a pipeline for experiments to iterate on improvements for computer vision.  Expanding the pipeline to other networks such as language models would be an obvious next step.
+
+[^1] https://arxiv.org/pdf/2103.03386.pdf
+[^2] https://distill.pub/2020/circuits/zoom-in/
+[^3] https://openreview.net/pdf?id=HreeeJvkue9
