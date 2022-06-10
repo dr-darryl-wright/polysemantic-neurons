@@ -15,7 +15,7 @@ Develop a proof-of-concept for an approach to penalising neural networks for lea
 
 2) A loss term was implemented as:
 
-    polysemantic loss = $n_{l}\sum_{k=1}^{l}\sum_{i=1}^{n}\sum_{j=1,j\neq i}^{n} \ beta_{ij} x_{i}^{l}x_{j}^{lT}$
+    polysemantic loss = $n_{l}\sum_{k=1}^l\sum_{i=1}^n\sum_{j=1,j\neq i}^n \beta_{ij} x_{i}^{l} \dot x_{j}^{lT}$
 
 $x_{i}^{l}$ is the activation vector of example i at hidden layer l rescaled to [0, 1]; n is the number of choose two pairs in each training batch;  controls the contribution of this term to the training loss. $\beta_{ij}$ is 0 if the labels of example i and j are equal and 1 otherwise.
 
