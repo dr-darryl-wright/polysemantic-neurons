@@ -12,7 +12,7 @@ from tqdm import tqdm
 
 font = {'family' : 'normal',
         'weight' : 'bold',
-        'size'   : 22}
+        'size'   : 16}
 
 matplotlib.rc('font', **font)
 
@@ -74,26 +74,32 @@ def generate_activations_plot(embed, x, y, save_path=None):
     a = embed.predict(x)
     for j in tqdm(range(len(x))):
         try:
-            activations_by_class[y[j]] += np.squeeze(a[j])
+            activations_by_class[y[j]] += np.squeeze(np.array(a[j] > 0., dtype='uint8'))
         except KeyError:
-            activations_by_class[y[j]] = np.squeeze(a[j])
-    fig = plt.figure(figsize=(20, 20))
+            activations_by_class[y[j]] = np.squeeze(np.array(a[j] > 0., dtype='uint8'))
+    fig = plt.figure(figsize=(12,8))
     classes = list(activations_by_class.keys())
     classes.sort()
     for i,k in enumerate(classes):
         y_pos = np.arange(len(activations_by_class[k]))
         ax = fig.add_subplot(2, 5, i+1)
         ax.set_title(k)
-        ax.barh(y_pos, np.log(np.squeeze(activations_by_class[k])), align='center')
+        ax.barh(y_pos, np.squeeze(activations_by_class[k]), align='center')
         ax.plot([0,0],[-1,len(np.squeeze(activations_by_class[k]))], 'k-')
         ax.set_ylim(-1,len(np.squeeze(activations_by_class[k])))
-        fig.text(0.5, 0.04, 'log summed activation', ha='center')
+        fig.text(0.5, 0.04, 'frequency neuron activated', ha='center')
         fig.text(0.04, 0.5, 'neuron index', va='center', rotation='vertical')
     sum = 0
     for c in list(itertools.combinations(range(10), 2)):
         a = (np.squeeze(activations_by_class[c[0]]) / (np.max(np.abs(np.squeeze(activations_by_class[c[0]])))) + 1e-9)
         b = (np.squeeze(activations_by_class[c[1]]) / (np.max(np.abs(np.squeeze(activations_by_class[c[1]])))) + 1e-9)
         sum += np.dot(np.transpose(a), b)
+    plt.subplots_adjust(left=0.125,
+                        bottom=0.1,
+                        right=0.9,
+                        top=0.9,
+                        wspace=0.4,
+                        hspace=0.3)
     if save_path:
         plt.savefig(save_path, bbox_inches='tight')
     else:
@@ -105,7 +111,7 @@ def generate_activations_plot(embed, x, y, save_path=None):
 # TODO: for layers deeper than the first hidden layer the neurons could be visualised as a weighted sum of the first layer activations
 def generate_visualise_hidden_neurons_plot(model, layer_index, n_hidden_neurons, vis_shape, save_path=None):
     W = model.layers[layer_index].get_weights()
-    fig = plt.figure(figsize=(20, 20))
+    fig = plt.figure(figsize=(10,10))
     dim = int(np.ceil(np.sqrt(n_hidden_neurons)))
     for j in range(n_hidden_neurons):
         x_j = W[0][:,j] / np.sqrt(np.sum(np.dot(W[0][:,j], W[0][:,j].T)))
