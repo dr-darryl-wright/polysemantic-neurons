@@ -25,6 +25,7 @@ The polysemantic loss was added to the cross entropy loss.  Control models were 
     <img src="https://github.com/dr-darryl-wright/polysemantic-neurons/blob/main/experiments/mnist/alpha_0.0/trial_1/layer_analysis/activations/test/e1_activations.png" alt="drawing" width="400"/>
     <img src="https://github.com/dr-darryl-wright/polysemantic-neurons/blob/main/experiments/mnist/alpha_1.0/trial_1/layer_analysis/activations/test/e1_activations.png" alt="drawing" width="400"/>
 </p>
+
 *Fig 1. (left) Frequency each neuron activated across the test for each class with $\alpha=0.0$. (right) The same but for $\alpha=1.0$.*
 
 3) Models were trained with $\alpha=-1$ to encourage PNs.  Compared to controls  the models were ~17% les accurate and neurons that fired for one class fired for other classes more frequently than in control models.
