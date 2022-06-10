@@ -44,6 +44,7 @@ The polysemantic loss was added to the cross entropy loss.  Control models were 
 <p align="center">
     <b>Fig 3.</b><em>Clusterability of MLPs labelled with their one-sided p-values</em>
 </p>
+
 ### Takeaways
 These results  indicate that it is possible to identify PNs and too successfully penalise a network for learning them with little loss in classification performance.  Similar results hold for the same experimental set up with [Fashion-MNIST](https://github.com/dr-darryl-wright/polysemantic-neurons/tree/main/experiments/fashion_mnist).
 
