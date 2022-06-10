@@ -44,7 +44,7 @@ The polysemantic loss was added to the cross entropy loss.  Control models were 
     <img src="https://github.com/dr-darryl-wright/polysemantic-neurons/blob/main/experiments/mnist/clusterability_k12.png" alt="drawing" width="400"/>
 </p>
 <p align="center">
-    <b>Fig 3.</b><em> Clusterability of MLPs labelled with their one-sided p-values</em>
+    <b>Fig 3.</b><em> Clusterability of MLPs labelled with their one-sided p-values. A lower N-cut implies increased absolute clusterability. Lower Z-score indicates increased relative clusterability.</em>
 </p>
 
 ### Takeaways
