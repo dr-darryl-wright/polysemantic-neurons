@@ -32,7 +32,7 @@ The polysemantic loss was added to the cross entropy loss.  Control models were 
 3) Models were trained with $\alpha=-1$ to encourage PNs.  Compared to controls  the models were ~17% les accurate and neurons that fired for one class fired for other classes more frequently than in control models.
 
 <p align="center">
-    <img src="https://github.com/dr-darryl-wright/polysemantic-neurons/blob/main/experiments/mnist/alpha_-1.0/trial_1/layer_analysis/activations/test/e1_activations.png" alt="drawing" width="400"/>
+    <img src="https://github.com/dr-darryl-wright/polysemantic-neurons/blob/main/experiments/mnist/alpha_%2D1.0/trial_1/layer_analysis/activations/test/e1_activations.png" alt="drawing" width="400"/>
     <b>Fig 2.</b><em>Frequency each neuron fired across the test set by class with</em> $\alpha=-1$<em>.</em>
 </p>
 
