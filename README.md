@@ -33,6 +33,8 @@ The polysemantic loss was added to the cross entropy loss.  Control models were 
 
 <p align="center">
     <img src="https://github.com/dr-darryl-wright/polysemantic-neurons/blob/main/experiments/mnist/alpha_-1.0/trial_1/layer_analysis/activations/test/e1_activations.png" alt="drawing" width="400"/>
+</p>
+<p align="center">
     <b>Fig 2.</b><em>Frequency each neuron fired across the test set by class with</em> $\alpha=-1$<em>.</em>
 </p>
 
