@@ -52,6 +52,6 @@ These aspects of encouraging PNs have not yet been explored.
 I think these initial results are promising enough to motivate effort to scale up the experiments. The first step would be to replicate the local specialization study of [Casper et al. (2022)](https://openreview.net/pdf?id=HreeeJvkue9) with CNNs penalised for learning PNs.  The hope would be that training in this way will yield greater class-specific measures of coherence than has been observed so far. This would then justify a deeper dive into an analysis of the circuits identified in these networks.
 At this stage we would have a pipeline for experiments to iterate on improvements for computer vision.  Expanding the pipeline to other networks such as language models would be an obvious next step.
 
-[^1] https://arxiv.org/pdf/2103.03386.pdf
-[^2] https://distill.pub/2020/circuits/zoom-in/
-[^3] https://openreview.net/pdf?id=HreeeJvkue9
+[^1]: https://arxiv.org/pdf/2103.03386.pdf
+[^2]: https://distill.pub/2020/circuits/zoom-in/
+[^3]: https://openreview.net/pdf?id=HreeeJvkue9
