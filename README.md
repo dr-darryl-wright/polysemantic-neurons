@@ -38,7 +38,7 @@ The polysemantic loss was added to the cross entropy loss.  Control models were 
 
 4) Penalising PNs lead to absolutely more clusterable networks than controls.  Encouraging PNs lead to absolutely less clusterable networks than controls, although the difference was less pronounced.
 
-<p align="center">
+<p float="center">
     <img src="https://github.com/dr-darryl-wright/polysemantic-neurons/blob/main/experiments/mnist/clusterability_k12.png" alt="drawing" width="400"/>
     <b>Fig 3.</b><em>Clusterability of MLPs labelled with their one-sided p-values</em>
 </p>
