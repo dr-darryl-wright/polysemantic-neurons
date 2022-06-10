@@ -1,3 +1,6 @@
+em {
+    font-style: italic;
+}
 # polysemantic-neurons
 
 ### Aims
@@ -21,12 +24,12 @@ $\hat x_{i}^{l}$ is the activation vector of example i at hidden layer l rescale
 
 The polysemantic loss was added to the cross entropy loss.  Control models were trained with $\alpha=0$; PNs were penalised with $\alpha=1$.  Compared to controls, when $\alpha=1$, the models were ~0.1% less accurate and neurons that fired for one class fired less frequently for other classes.
 
-<p float="left">
+<p float="left" class="em">
     <img src="https://github.com/dr-darryl-wright/polysemantic-neurons/blob/main/experiments/mnist/alpha_0.0/trial_1/layer_analysis/activations/test/e1_activations.png" alt="drawing" width="400"/>
     <img src="https://github.com/dr-darryl-wright/polysemantic-neurons/blob/main/experiments/mnist/alpha_1.0/trial_1/layer_analysis/activations/test/e1_activations.png" alt="drawing" width="400"/>
 </p>
 <p align="center">
-*Fig 1. (left) Frequency each neuron activated across the test for each class with* $\alpha=0.0$ *. (right) The same but for* $\alpha=1$ *.*
+    *Fig 1. (left) Frequency each neuron activated across the test for each class with* $\alpha=0.0$ *. (right) The same but for* $\alpha=1$ *.*
 </p>
 
 3) Models were trained with $\alpha=-1$ to encourage PNs.  Compared to controls  the models were ~17% les accurate and neurons that fired for one class fired for other classes more frequently than in control models.
