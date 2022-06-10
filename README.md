@@ -48,7 +48,7 @@ The polysemantic loss was added to the cross entropy loss.  Control models were 
 </p>
 
 ### Takeaways
-These results  indicate that it is possible to identify PNs and too successfully penalise a network for learning them with little loss in classification performance.  Similar results hold for the same experimental set up with [Fashion-MNIST](https://github.com/dr-darryl-wright/polysemantic-neurons/tree/main/experiments/fashion_mnist).
+These results  indicate that it is possible to identify PNs and to successfully penalise a network for learning them with little loss in classification performance.  Similar results hold for the same experimental set up with [Fashion-MNIST](https://github.com/dr-darryl-wright/polysemantic-neurons/tree/main/experiments/fashion_mnist).
 
 For a network to be absolutely more clusterable it must be more modular, meaning it can be partitioned into subgraphs with strong internal connectivity but only weakly connected to other neurons[^1]. This shares the definition of circuits, “a computational subgraph of a neural network. It consists of a set of features, and the weighted edges that go between them in the original network.”[^2] The circuits agenda aims to improve interpretability of neural networks by identifying subgraphs that are more tractable to rigorously investigate than the whole network. If circuits are coherent with respect to class labels, then network behaviour could be interpreted in terms of individual circuit behaviour. Effectively allowing the interpretability of networks to be decomposed into subproblems. PNs are a problem as they are not coherent with respect to class labels and therefore, neither are circuits that contain them.
 
