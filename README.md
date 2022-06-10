@@ -19,9 +19,9 @@ Develop a proof-of-concept for an approach to penalising neural networks for lea
 
 $\hat x_{i}^{l}$ is the activation vector of example i at hidden layer l rescaled to [0, 1]; n is the number of choose two pairs in each training batch;  controls the contribution of this term to the training loss. $\beta_{ij}$ is 0 if the labels of example i and j are equal and 1 otherwise.
 
-The polysemantic loss was added to the cross entropy loss.  Control models were trained with =0; PNs were penalised with =1.  Compared to controls, when =1, the models were ~0.1% less accurate and neurons that fired for one class fired less frequently for other classes.
+The polysemantic loss was added to the cross entropy loss.  Control models were trained with $\alpha=0$; PNs were penalised with $\alpha=1$.  Compared to controls, when $\alpha=1$, the models were ~0.1% less accurate and neurons that fired for one class fired less frequently for other classes.
 
-3) Models were trained with =-1 to encourage PNs.  Compared to controls  the models were ~17% les accurate and neurons that fired for one class fired for other classes more frequently than in control models.
+3) Models were trained with $\alpha=-1$ to encourage PNs.  Compared to controls  the models were ~17% les accurate and neurons that fired for one class fired for other classes more frequently than in control models.
 
 4) Penalising PNs lead to absolutely more clusterable networks than controls.  Encouraging PNs lead to absolutely less clusterable networks than controls, although the difference was less pronounced.
 
@@ -43,7 +43,7 @@ The clustering results in 4) are promising. The hypothesis was that penalising P
 
 One motivation for aim 3) was to investigate whether encouraging PNs would compress more information into each neuron and allow a smaller network to classify as accurately as the smallest network that achieves the same performance but trained only with cross entropy.  Conversely, penalising PNs might be expected to require a larger network to achieve the same performance as the controls.
 
-When encouraging PNs, all hidden neurons fired for all inputs and the networks only achieve ~82% classification accuracy. This might indicate that =-1 is too aggressive, “washing out” the cross entropy contribution to the loss.
+When encouraging PNs, all hidden neurons fired for all inputs and the networks only achieve ~82% classification accuracy. This might indicate that $\alpha=-1$ is too aggressive, “washing out” the cross entropy contribution to the loss.
 
 These aspects of encouraging PNs have not yet been explored.
 
