@@ -61,7 +61,7 @@ For the polysemantic loss in the experiments, the activation vectors are rescale
 
 *Are the clusters coherent with class labels?*
 
-The clustering results in 4) are promising. The hypothesis was that penalising PNs should lead to networks that are absolutely more clusterable than controls and networks where PNs are encourages. This is what was seen for both MNIST and Fashion-MNIST.  MNIST networks were also relatively more clusterable.  However, networks trained on Fashion-MNIST were not, suggesting that the increased absolute clusterability may simply be due to the distribution of weights in each layer.  It remains to be seen if the circuits identified by clustering are coherent with respect to class labels or with respect to input features as has been observed for the MNIST controls[^3]. 
+The clustering results in 4) are promising. The hypothesis was that penalising PNs should lead to networks that are absolutely more clusterable than controls and networks where PNs are encouraged. This is what was seen for both MNIST and Fashion-MNIST.  MNIST networks were also relatively more clusterable.  However, networks trained on Fashion-MNIST were not, suggesting that the increased absolute clusterability may simply be due to the distribution of weights in each layer.  It remains to be seen if the circuits identified by clustering are coherent with respect to class labels, or as has been observed for the MNIST controls[^3], with respect to input features. 
 
 *Encouraging PNs*
 
