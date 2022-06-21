@@ -19,7 +19,7 @@ Develop a proof-of-concept for an approach to penalising neural networks for lea
 
 $\hat x_{i}^{l}$ is the activation vector of example i at hidden layer l rescaled to [0, 1]; n is the number of choose two pairs in each training batch;  controls the contribution of this term to the training loss. $\beta_{ij}$ is 0 if the labels of example $i$ and $j$ are equal and 1 otherwise.
 
-The polysemantic loss was added to the cross entropy loss.  Control models were trained with $\alpha=0$; PNs were penalised with $\alpha=1$.  Compared to controls, when $\alpha=1$, the models were ~0.1% less accurate and neurons that fired for one class fired less frequently for other classes.
+The polysemantic loss was added to the cross entropy loss.  Control models were trained with $\alpha=0$ ; PNs were penalised with $\alpha=1$.  Compared to controls, when $\alpha=1$, the models were ~0.1% less accurate and neurons that fired for one class fired less frequently for other classes.
 
 <p float="left">
     <img src="https://github.com/dr-darryl-wright/polysemantic-neurons/blob/main/experiments/mnist/alpha_0.0/trial_1/layer_analysis/activations/test/e1_activations.png" alt="drawing" width="400"/>
